@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "美食制作体验预约",
+  "navigationBarBackgroundColor": "#ff8f00",
+  "usingComponents": {
+    "custom-nav-bar": "../../components/CustomNavBar"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "线上香氛选购",
+  "navigationBarBackgroundColor": "#e91e63",
+  "usingComponents": {
+    "custom-nav-bar": "../../components/CustomNavBar"
+  }
+}

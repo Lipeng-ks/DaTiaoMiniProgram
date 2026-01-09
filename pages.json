@@ -1,0 +1,155 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "壮乡文化疗愈"
+			}
+		},
+		{
+			"path": "pages/sound-healing/sound-healing",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "声愈"
+			}
+		},
+		{
+			"path": "pages/sound-healing/online-duet",
+			"style": {
+				"navigationBarTitleText": "线上山歌对唱"
+			}
+		},
+		{
+			"path": "pages/sound-healing/offline-booking",
+			"style": {
+				"navigationBarTitleText": "线下山歌挑战预约"
+			}
+		},
+		{
+			"path": "pages/sound-healing/booking-records",
+			"style": {
+				"navigationBarTitleText": "我的预约"
+			}
+		},
+		{
+			"path": "pages/sound-healing/booking-detail",
+			"style": {
+				"navigationBarTitleText": "预约详情"
+			}
+		},
+		{
+			"path": "pages/art-healing/art-healing",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "艺愈"
+			}
+		},
+		{
+			"path": "pages/art-healing/online-shop",
+			"style": {
+				"navigationBarTitleText": "线上文创选购",
+				"navigationBarBackgroundColor": "#ff9800"
+			}
+		},
+		{
+			"path": "pages/art-healing/festival-booking",
+			"style": {
+				"navigationBarTitleText": "艺术节预约",
+				"navigationBarBackgroundColor": "#ff9800"
+			}
+		},
+		{
+			"path": "pages/art-healing/booking-records",
+			"style": {
+				"navigationBarTitleText": "我的预约",
+				"navigationBarBackgroundColor": "#ff9800"
+			}
+		},
+		{
+			"path": "pages/art-healing/booking-detail",
+			"style": {
+				"navigationBarTitleText": "预约详情",
+				"navigationBarBackgroundColor": "#ff9800"
+			}
+		},
+		{
+			"path": "pages/aroma-healing/aroma-healing",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "香愈"
+			}
+		},
+		{
+			"path": "pages/aroma-healing/aroma-shop",
+			"style": {
+				"navigationBarTitleText": "线上香氛选购",
+				"navigationBarBackgroundColor": "#e91e63"
+			}
+		},
+		{
+			"path": "pages/aroma-healing/salon-booking",
+			"style": {
+				"navigationBarTitleText": "香氛沙龙预约",
+				"navigationBarBackgroundColor": "#e91e63"
+			}
+		},
+		{
+			"path": "pages/aroma-healing/booking-records",
+			"style": {
+				"navigationBarTitleText": "我的预约",
+				"navigationBarBackgroundColor": "#e91e63"
+			}
+		},
+		{
+			"path": "pages/aroma-healing/booking-detail",
+			"style": {
+				"navigationBarTitleText": "预约详情",
+				"navigationBarBackgroundColor": "#e91e63"
+			}
+		},
+		{
+			"path": "pages/food-healing/food-healing",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "食愈"
+			}
+		},
+		{
+			"path": "pages/food-healing/food-shop",
+			"style": {
+				"navigationBarTitleText": "线上美食选购",
+				"navigationBarBackgroundColor": "#ff8f00"
+			}
+		},
+		{
+			"path": "pages/food-healing/cooking-booking",
+			"style": {
+				"navigationBarTitleText": "美食制作体验预约",
+				"navigationBarBackgroundColor": "#ff8f00"
+			}
+		},
+		{
+			"path": "pages/food-healing/booking-records",
+			"style": {
+				"navigationBarTitleText": "我的预约",
+				"navigationBarBackgroundColor": "#ff8f00"
+			}
+		},
+		{
+			"path": "pages/food-healing/booking-detail",
+			"style": {
+				"navigationBarTitleText": "预约详情",
+				"navigationBarBackgroundColor": "#ff8f00"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "壮乡文化疗愈",
+		"navigationBarBackgroundColor": "#2e7d32",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	},
+	"uniIdRouter": {}
+}

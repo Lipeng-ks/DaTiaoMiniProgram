@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "线上美食选购",
+  "navigationBarBackgroundColor": "#ff8f00",
+  "usingComponents": {
+    "custom-nav-bar": "../../components/CustomNavBar"
+  }
+}

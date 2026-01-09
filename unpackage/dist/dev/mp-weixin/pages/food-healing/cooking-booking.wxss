@@ -1,0 +1,312 @@
+
+.cooking-booking-container.data-v-255586a1 {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* 加载状态 */
+.loading.data-v-255586a1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 体验活动列表 */
+.experience-list.data-v-255586a1 {
+  padding: 20rpx;
+}
+.experience-card.data-v-255586a1 {
+  background: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+.experience-cover.data-v-255586a1 {
+  width: 100%;
+  height: 300rpx;
+  background: #fff8e1;
+}
+.experience-content.data-v-255586a1 {
+  padding: 30rpx;
+}
+.experience-title.data-v-255586a1 {
+  display: block;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+.experience-desc.data-v-255586a1 {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+  line-height: 1.5;
+}
+.experience-tags.data-v-255586a1 {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+.dish-tag.data-v-255586a1 {
+  display: inline-block;
+  background: #fff8e1;
+  color: #ff8f00;
+  font-size: 22rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+}
+.difficulty-tag.data-v-255586a1 {
+  display: inline-block;
+  font-size: 22rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+}
+.difficulty-tag.easy.data-v-255586a1 {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+.difficulty-tag.medium.data-v-255586a1 {
+  background: #fff3e0;
+  color: #ff9800;
+}
+.difficulty-tag.hard.data-v-255586a1 {
+  background: #ffebee;
+  color: #f44336;
+}
+.experience-info.data-v-255586a1 {
+  margin-bottom: 20rpx;
+}
+.info-item.data-v-255586a1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+.info-icon.data-v-255586a1 {
+  margin-right: 12rpx;
+  font-size: 28rpx;
+}
+.info-text.data-v-255586a1 {
+  font-size: 26rpx;
+  color: #666;
+}
+.info-text.sold-out.data-v-255586a1 {
+  color: #f44336;
+  font-weight: 600;
+}
+.book-btn.data-v-255586a1 {
+  width: 100%;
+  background: #ff8f00;
+  color: #ffffff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  padding: 24rpx 0;
+}
+.book-btn.disabled.data-v-255586a1 {
+  background: #ccc;
+  color: #999;
+}
+
+/* 空状态 */
+.empty-state.data-v-255586a1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+.empty-icon.data-v-255586a1 {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+.empty-text.data-v-255586a1 {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 预约弹窗 */
+.booking-modal.data-v-255586a1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  z-index: 1000;
+}
+.modal-content.data-v-255586a1 {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 30rpx 30rpx 0 0;
+  padding: 40rpx;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modal-header.data-v-255586a1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.modal-title.data-v-255586a1 {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.close-btn.data-v-255586a1 {
+  font-size: 48rpx;
+  color: #999;
+  line-height: 1;
+}
+
+/* 选中的体验活动信息 */
+.selected-experience-info.data-v-255586a1 {
+  background: #fff8e1;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 30rpx;
+}
+.experience-name.data-v-255586a1 {
+  display: block;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+.experience-datetime.data-v-255586a1 {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 4rpx;
+}
+.experience-place.data-v-255586a1 {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 表单样式 */
+.form-group.data-v-255586a1 {
+  margin-bottom: 30rpx;
+}
+.form-label.data-v-255586a1 {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+.required.data-v-255586a1 {
+  color: #f44336;
+}
+.form-input.data-v-255586a1 {
+  width: 100%;
+  height: 88rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.form-input.error.data-v-255586a1 {
+  border-color: #f44336;
+}
+.form-textarea.data-v-255586a1 {
+  width: 100%;
+  height: 160rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.error-text.data-v-255586a1 {
+  display: block;
+  font-size: 24rpx;
+  color: #f44336;
+  margin-top: 8rpx;
+}
+.submit-btn.data-v-255586a1 {
+  width: 100%;
+  background: #ff8f00;
+  color: #ffffff;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  padding: 28rpx 0;
+  margin-top: 20rpx;
+}
+
+/* 确认弹窗 */
+.confirmation-modal.data-v-255586a1 {
+  text-align: center;
+  padding: 60rpx 40rpx;
+}
+.success-icon.data-v-255586a1 {
+  width: 120rpx;
+  height: 120rpx;
+  background: #ff8f00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30rpx;
+  font-size: 60rpx;
+  color: #ffffff;
+}
+.success-title.data-v-255586a1 {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+.confirmation-details.data-v-255586a1 {
+  background: #fff8e1;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  text-align: left;
+  margin-bottom: 40rpx;
+}
+.detail-item.data-v-255586a1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.detail-item.data-v-255586a1:last-child {
+  margin-bottom: 0;
+}
+.detail-label.data-v-255586a1 {
+  font-size: 26rpx;
+  color: #999;
+}
+.detail-value.data-v-255586a1 {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+}
+.confirmation-actions.data-v-255586a1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.view-records-btn.data-v-255586a1 {
+  width: 100%;
+  background: #ff8f00;
+  color: #ffffff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  padding: 24rpx 0;
+}
+.close-confirm-btn.data-v-255586a1 {
+  width: 100%;
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  padding: 24rpx 0;
+}

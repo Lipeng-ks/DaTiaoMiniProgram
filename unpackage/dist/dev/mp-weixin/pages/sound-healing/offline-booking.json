@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "线下山歌挑战预约",
+  "usingComponents": {
+    "custom-nav-bar": "../../components/CustomNavBar"
+  }
+}
