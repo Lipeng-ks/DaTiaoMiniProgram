@@ -1,39 +1,52 @@
 <template>
   <view class="home-container">
-    <!-- 自定义导航栏 -->
-    <view class="custom-navbar" :style="{ paddingTop: statusBarHeight + 'px' }">
-      <view class="navbar-glow"></view>
-      <view class="navbar-ribbon"></view>
-      <view class="navbar-pattern"></view>
-      <view class="navbar-curve"></view>
-      <view class="navbar-content">
-        <view class="navbar-left"></view>
-        <view class="navbar-center">
-          <text class="navbar-title">壮乡文化疗愈</text>
-          <text class="navbar-subtitle">探索四大疗愈之旅</text>
-        </view>
-        <view class="navbar-right"></view>
+    <!-- 顶部标题区 -->
+    <view class="header-section" :style="{ paddingTop: (statusBarHeight + 10) + 'px' }">
+      <view class="header-icon">
+        <svg viewBox="0 0 24 24" fill="none" class="leaf-icon" stroke="#4caf50" stroke-width="2">
+          <path d="M12 2C7.5 2 4 5.5 4 10c0 4.5 4.5 9 10 12 4.5-3 8-7.5 8-12 0-3.5-2.5-7-7-9z" fill="none"/>
+          <path d="M12 22C12 22 12 12 12 6" stroke="#4caf50" stroke-linecap="round"/>
+          <path d="M12 14C12 14 15 12 17 10" stroke="#4caf50" stroke-linecap="round"/>
+          <path d="M12 10C12 10 9 9 7 8" stroke="#4caf50" stroke-linecap="round"/>
+        </svg>
       </view>
+      <text class="main-title">壮乡文化疗愈</text>
+      <text class="sub-title">探索四大疗愈之旅</text>
+      <view class="title-underline"></view>
     </view>
     
-    <!-- 内容区域 -->
-    <view class="content-area" :style="{ paddingTop: (statusBarHeight + 110) + 'px' }">
-      <view class="healing-grid">
-        <view 
-          v-for="card in healingCards" 
-          :key="card.id" 
-          class="healing-card"
-          :class="card.id"
-          @click="navigateTo(card)"
-        >
-          <view class="card-icon" :class="card.id + '-icon'">
-            <view class="icon-inner" v-html="card.svgIcon"></view>
+    <!-- 内容卡片列表 -->
+    <view class="card-list">
+      <view 
+        v-for="card in healingCards" 
+        :key="card.id" 
+        class="feature-card"
+        :class="card.id"
+        :style="{ backgroundImage: card.bgImage ? 'url(' + card.bgImage + ')' : '' }"
+        @click="navigateTo(card)"
+      >
+        <!-- 背景图层 (使用渐变模拟) -->
+        <view class="card-bg-overlay"></view>
+        
+        <!-- 玻璃拟态内容框 -->
+        <view class="glass-panel">
+          <view class="panel-left">
+            <view class="icon-box">
+               <view class="icon-svg" v-html="card.svgIcon"></view>
+            </view>
+            <view class="text-content">
+              <text class="card-name">{{ card.title }}</text>
+              <text class="card-slogan">{{ card.description }}</text>
+            </view>
           </view>
-          <text class="card-title">{{ card.title }}</text>
-          <text class="card-desc">{{ card.description }}</text>
+          <view class="arrow-btn">
+            <view class="arrow-icon">→</view>
+          </view>
         </view>
       </view>
     </view>
+
+    <!-- 底部导航 (装饰用) - 已移除 -->
   </view>
 </template>
 
@@ -47,33 +60,38 @@ export default {
           id: 'sound-healing',
           title: '声愈',
           description: '山歌疗愈心灵',
-          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+          // 简化的白色SVG
+          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
           path: '/pages/sound-healing/sound-healing',
-          enabled: true
+          enabled: true,
+          bgImage: '/static/Voicehealing.png'
         },
         {
           id: 'art-healing',
           title: '艺愈',
           description: '艺术滋养身心',
-          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
           path: '/pages/art-healing/art-healing',
-          enabled: true
-        },
-        {
-          id: 'aroma-healing',
-          title: '香愈',
-          description: '香气舒缓情绪',
-          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c4.97 0 9-2.69 9-6v-2c0-3.31-4.03-6-9-6s-9 2.69-9 6v2c0 3.31 4.03 6 9 6z"/><path d="M12 8V2"/><path d="M8 4l4-2 4 2"/></svg>',
-          path: '/pages/aroma-healing/aroma-healing',
-          enabled: true
+          enabled: true,
+          bgImage: '/static/ArtHealing.png'
         },
         {
           id: 'food-healing',
           title: '食愈',
           description: '美食疗愈味蕾',
-          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>',
+          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>',
           path: '/pages/food-healing/food-healing',
-          enabled: true
+          enabled: true,
+          bgImage: '/static/Foodhealing.png'
+        },
+        {
+          id: 'aroma-healing',
+          title: '香愈',
+          description: '香气舒缓情绪',
+          svgIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22c4.97 0 9-2.69 9-6v-2c0-3.31-4.03-6-9-6s-9 2.69-9 6v2c0 3.31 4.03 6 9 6z"/><path d="M12 8V2"/><path d="M8 4l4-2 4 2"/></svg>',
+          path: '/pages/aroma-healing/aroma-healing',
+          enabled: true,
+          bgImage: '/static/Aromatherapy.png'
         }
       ]
     }
@@ -97,203 +115,177 @@ export default {
 <style scoped>
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #e8f5e9 0%, #ffffff 50%);
-}
-
-.custom-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  overflow: hidden;
-  background: linear-gradient(120deg, #1b5e20 0%, #2e7d32 45%, #43a047 100%);
-  box-shadow: 0 20rpx 44rpx rgba(46, 125, 50, 0.25);
-  border-bottom-left-radius: 28rpx;
-  border-bottom-right-radius: 28rpx;
-  padding-bottom: 12rpx;
-}
-
-.custom-navbar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0.12) 70%, rgba(255, 255, 255, 0.04) 100%);
-  opacity: 0.6;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-.navbar-glow {
-  position: absolute;
-  width: 320rpx;
-  height: 320rpx;
-  top: -140rpx;
-  right: -120rpx;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), transparent 55%);
-  filter: blur(28rpx);
-  opacity: 0.72;
-}
-
-.navbar-ribbon {
-  position: absolute;
-  left: -30rpx;
-  right: -30rpx;
-  bottom: -32rpx;
-  height: 96rpx;
-  background: linear-gradient(115deg, rgba(255, 255, 255, 0.12), rgba(181, 255, 201, 0.26));
-  transform: skewY(-4deg);
-}
-
-.navbar-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0) 24%),
-    radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 22%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
-  background-size: 100% 100%, 100% 100%, 42rpx 42rpx;
-  opacity: 0.95;
-}
-
-.navbar-curve {
-  position: absolute;
-  left: -60rpx;
-  right: -60rpx;
-  bottom: -46rpx;
-  height: 120rpx;
-  background: radial-gradient(120rpx 80rpx at 50% 0, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0));
-  transform: translateY(8rpx);
-}
-
-.navbar-content {
+  background: linear-gradient(180deg, #f0f7f4 0%, #fdfbf7 100%);
+  padding-bottom: 100rpx; /* 为底部导航留出空间 */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 96rpx;
-  padding: 0 22rpx 14rpx;
+  flex-direction: column;
 }
 
-.navbar-left {
-  width: 88rpx;
-}
-
-.navbar-center {
-  flex: 1;
+.header-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-bottom: 40rpx;
 }
 
-.navbar-title {
-  font-size: 38rpx;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 2rpx;
-  text-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.2);
+.header-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
 }
-
-.navbar-subtitle {
-  font-size: 22rpx;
-  color: rgba(255, 255, 255, 0.92);
-  margin-top: 6rpx;
-  letter-spacing: 1rpx;
-}
-
-.navbar-right {
-  width: 88rpx;
-}
-
-.content-area {
-  padding: 24rpx 30rpx;
-}
-
-.healing-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
-}
-
-.healing-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40rpx 24rpx 36rpx;
-  border-radius: 28rpx;
-  box-shadow: 0 8rpx 30rpx rgba(0, 0, 0, 0.06);
-}
-
-.healing-card:active {
-  opacity: 0.9;
-}
-
-/* 声愈 - 绿色 */
-.sound-healing {
-  background: linear-gradient(145deg, #e8f5e9 0%, #c8e6c9 100%);
-}
-.sound-healing-icon {
-  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
-  color: #2e7d32;
-}
-
-/* 艺愈 - 橙色 */
-.art-healing {
-  background: linear-gradient(145deg, #fff3e0 0%, #ffe0b2 100%);
-}
-.art-healing-icon {
-  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
-  color: #e65100;
-}
-
-/* 香愈 - 粉色 */
-.aroma-healing {
-  background: linear-gradient(145deg, #fce4ec 0%, #f8bbd0 100%);
-}
-.aroma-healing-icon {
-  background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
-  color: #c2185b;
-}
-
-/* 食愈 - 黄色 */
-.food-healing {
-  background: linear-gradient(145deg, #fff8e1 0%, #ffecb3 100%);
-}
-.food-healing-icon {
-  background: linear-gradient(135deg, #ffecb3 0%, #ffe082 100%);
-  color: #e65100;
-}
-
-.card-icon {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20rpx;
-}
-
-.icon-inner {
-  width: 48rpx;
-  height: 48rpx;
-}
-
-.icon-inner svg {
+.leaf-icon {
   width: 100%;
   height: 100%;
 }
 
-.card-title {
-  font-size: 36rpx;
-  font-weight: 600;
-  color: #1a1a1a;
+.main-title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #1a3c34;
+  letter-spacing: 2rpx;
   margin-bottom: 8rpx;
+  font-family: serif; /* 尝试使用衬线体风格 */
 }
 
-.card-desc {
+.sub-title {
   font-size: 24rpx;
-  color: #666;
-  text-align: center;
+  color: #6d7d75;
+  margin-bottom: 12rpx;
+  letter-spacing: 4rpx;
 }
+
+.title-underline {
+  width: 80rpx;
+  height: 4rpx;
+  background-color: #a5d6a7;
+  border-radius: 2rpx;
+}
+
+.card-list {
+  padding: 0 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 36rpx;
+}
+
+.feature-card {
+  height: 340rpx;
+  border-radius: 40rpx;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20rpx 40rpx rgba(0,0,0,0.08);
+  background: #ccc; 
+  background-size: 100% 100% !important;
+  background-position: center;
+  transition: transform 0.2s;
+}
+
+.feature-card:active {
+  transform: scale(0.98);
+}
+
+/* 模拟背景图 - 实际上应该使用 assets 中的图片 */
+.sound-healing {
+  /* 森林深绿 */
+  background: linear-gradient(160deg, #2d5a4c 0%, #1b3a31 100%);
+}
+.art-healing {
+  /* 木纹金棕 */
+  background: linear-gradient(160deg, #8d6e53 0%, #5d4037 100%);
+}
+.aroma-healing {
+  /* 花卉柔粉/深红 */
+  background: linear-gradient(160deg, #88394e 0%, #581d2a 100%);
+}
+.food-healing {
+  /* 茶韵深褐 */
+  background: linear-gradient(160deg, #5d4037 0%, #3e2723 100%);
+}
+
+.card-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 添加纹理叠加效果 */
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 20%);
+}
+
+.glass-panel {
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 140rpx;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+  border-radius: 30rpx;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+
+.panel-left {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.icon-box {
+  width: 80rpx;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-svg {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-bottom: 4rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.1);
+}
+
+.card-slogan {
+  color: rgba(255,255,255,0.85);
+  font-size: 22rpx;
+}
+
+.arrow-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.arrow-icon {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+
 </style>

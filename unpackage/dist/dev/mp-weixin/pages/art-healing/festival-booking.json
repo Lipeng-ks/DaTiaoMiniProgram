@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "艺术节预约",
-  "navigationBarBackgroundColor": "#ff9800",
-  "usingComponents": {
-    "custom-nav-bar": "../../components/CustomNavBar"
-  }
-}

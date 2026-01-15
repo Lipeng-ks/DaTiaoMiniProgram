@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "线上文创选购",
-  "navigationBarBackgroundColor": "#ff9800",
-  "usingComponents": {
-    "custom-nav-bar": "../../components/CustomNavBar"
-  }
-}

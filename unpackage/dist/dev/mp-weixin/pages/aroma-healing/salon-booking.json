@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "香氛沙龙预约",
-  "navigationBarBackgroundColor": "#e91e63",
-  "usingComponents": {
-    "custom-nav-bar": "../../components/CustomNavBar"
-  }
-}

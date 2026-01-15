@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "线上山歌对唱",
-  "usingComponents": {
-    "custom-nav-bar": "../../components/CustomNavBar"
-  }
-}

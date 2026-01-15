@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "我的预约",
-  "usingComponents": {
-    "custom-nav-bar": "../../components/CustomNavBar"
-  }
-}
